@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 const config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,11 +10,12 @@ const config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        outfit: ['var(--font-outfit)'],
+        'geist-sans': ['var(--font-geist-sans)'],
+        'geist-mono': ['var(--font-geist-mono)']
+      }
     },
-    fontFamily: {
-      outfit: ['var(--font-outfit)'],
-    },
-    
   },
   plugins: [],
 };

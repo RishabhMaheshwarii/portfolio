@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Linkedin, Youtube } from "lucide-react";
 
 const Navbar = () => {
@@ -19,19 +19,17 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#blog", label: "Blog" },
+    // { href: "#projects", label: "Projects" },
+    { href: "/posts", label: "Posts" },
   ];
 
   return (
     <nav
-      className={`fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
-        ${
-          scrolled
-            ? "bg-white/80 backdrop-blur-md border-b border-gray-200/20 shadow-sm"
-            : "bg-white/70 backdrop-blur-md"
-        }
-      `}
+      className={`fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-md border-b border-gray-200/20 shadow-sm"
+          : "bg-white/70 backdrop-blur-md"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">

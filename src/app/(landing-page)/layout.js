@@ -1,24 +1,25 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { Outfit } from 'next/font/google';
-import Navbar from './components/Header';
-import Footer from './components/Footer';
+import "./globals.css";
+import Navbar from "./components/Header";
+import Footer from "./components/Footer";
 
+// Move font definitions outside component
 const outfit = Outfit({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-outfit',
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-outfit",
 });
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata = {
@@ -27,18 +28,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Combine classes in a consistent order
+  const bodyClasses = [
+    outfit.variable,
+    geistSans.variable,
+    geistMono.variable,
+    "antialiased",
+  ].join(" ");
+
   return (
-    <html 
-      lang="en" 
-      className={`${outfit.variable} ${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
-      <body className="min-h-screen w-full bg-white" suppressHydrationWarning>
-      <div className="flex flex-col min-h-screen">
+    <html lang="en">
+      <body className={bodyClasses}>
+        <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </div>
         <Analytics />
