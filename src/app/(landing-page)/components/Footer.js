@@ -10,7 +10,7 @@ const Footer = () => {
             href="mailto:elizaveta.malash@gmail.com"
             className="text-xl md:text-2xl text-white transition-colors duration-200 font-thin tracking-wide hover:scale-105 transform"
           >
-            maheshwari7004@gmail.com
+            maheshwari7004@mechanic.com
           </a>
         </div>
       </div>
