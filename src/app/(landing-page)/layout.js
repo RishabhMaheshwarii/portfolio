@@ -1,3 +1,4 @@
+import Script from "next/script"; // ✅ Import Script
 import { Geist, Geist_Mono } from "next/font/google";
 import { Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -28,7 +29,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // Combine classes in a consistent order
   const bodyClasses = [
     outfit.variable,
     geistSans.variable,
@@ -38,6 +38,22 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Load GA4 gtag.js script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-2L1W9V2GCG"
+          strategy="afterInteractive"
+        />
+        {/* ✅ Configure GA4 tracking */}
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2L1W9V2GCG');
+          `}
+        </Script>
+      </head>
       <body className={bodyClasses}>
         <div className="flex flex-col min-h-screen">
           <Navbar />
