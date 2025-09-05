@@ -1,13 +1,10 @@
 import Contact from "../components/Contact";
-import Navbar from "../components/Header";
-import Footer from "../components/Footer";
+
+export const metadata = {
+  title: "Contact | Rishabh Maheshwari",
+  description: "Let's work together",
+};
 
 export default function ContactPage() {
-    return (
-        <>
-            <Navbar />
-            <Contact />
-            <Footer />
-        </>
-    );
+  return <Contact />;
 }
