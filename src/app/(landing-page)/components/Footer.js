@@ -24,7 +24,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href=" https://www.youtube.com/watch?v=u1rnt69HbmI"
+                href="https://www.youtube.com/watch?v=u1rnt69HbmI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg transition-colors duration-200"
