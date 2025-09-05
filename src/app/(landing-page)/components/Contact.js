@@ -1,4 +1,3 @@
-"use client";
 import { Linkedin, Youtube } from "lucide-react";
 
 const Contact = () => {
