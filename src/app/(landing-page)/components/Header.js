@@ -21,15 +21,15 @@ const Navbar = () => {
     { href: "/about", label: "About" },
     // { href: "#projects", label: "Projects" },
     { href: "/posts", label: "Posts" },
+
   ];
 
   return (
     <nav
-      className={`fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        scrolled
+      className={`fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${scrolled
           ? "bg-white/80 backdrop-blur-md border-b border-gray-200/20 shadow-sm"
           : "bg-white/70 backdrop-blur-md"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -116,38 +116,38 @@ const Navbar = () => {
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
-
-            <button className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-bold text-white transition duration-300 ease-out bg-gray-900 rounded-lg shadow-md group hover:scale-105">
-              <span className="absolute inset-0 flex items-center justify-center w-full h-full text-gray-900 duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">
-                Get in Touch
-              </span>
-              <span className="relative invisible">Get in Touch</span>
-            </button>
+            <Link href="/contact">
+              <button className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-bold text-white transition duration-300 ease-out bg-gray-900 rounded-lg shadow-md group hover:scale-105">
+                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-gray-900 duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                </span>
+                <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">
+                  Get in Touch
+                </span>
+                <span className="relative invisible">Get in Touch</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
       <div
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200/20`}
+        className={`${isMenuOpen ? "block" : "hidden"
+          } md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200/20`}
       >
         <div className="px-4 pt-2 pb-3 space-y-2">
           {navLinks.map(({ href, label }) => (
@@ -181,9 +181,9 @@ const Navbar = () => {
             </a>
           </div>
 
-          <button className="w-full mt-4 px-4 py-3 text-base font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors duration-200">
+          <Link href="/contact" className="w-full mt-4 px-4 py-3 text-base font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-800 transition-colors duration-200">
             Get in Touch
-          </button>
+          </Link>
         </div>
       </div>
     </nav>
